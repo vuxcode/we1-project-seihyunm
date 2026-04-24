@@ -7,7 +7,6 @@
       width: 3000px;
       height: 100vh;
     }
-
     /* Controls the lenght of the timline */
     .timeline, 
     .background {
@@ -19,12 +18,27 @@
         position: absolute;
         top: 50%;
     }
-
+    .boxes {
+        border: 5px solid black;
+        width: 100px;
+        height: 60px;
+        position: absolute;
+    }
+    .t1 {
+        top: 60%;
+        left: 40px;
+    }
+    .t2 {
+        top: 40%;
+        left: 180px;
+    }
     </style>
   </head>
   <body>
     <main>
       <div class="background"></div>
+      <div class="boxes t1"></div>
+      <div class="boxes t2"></div>
       <div class="timeline"></div>
     </main>
   </body>
