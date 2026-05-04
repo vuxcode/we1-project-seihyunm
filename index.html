@@ -1,1 +1,62 @@
-<!-- Start writing your project code in this file! -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Major Project</title>
+    <style> 
+    @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    * {
+      box-sizing: border-box; 
+      margin: 0%;
+      padding: 0px;
+    }
+    body {
+      font-family: "Elms Sans", sans-serif;
+    }
+    .background {
+      background-color: #5B5750;
+      width: 3000px;
+      height: 100vh;
+    }
+    /* Controls the lenght of the timline */
+    .timeline, 
+    .background {
+      width: 3000px;
+    }
+    .timeline 
+    {
+        border-bottom: 5px dashed black;
+        position: absolute;
+        top: 50%;
+    }
+    .boxes {
+        border: 2px groove black;
+        width: 200px;
+        position: absolute;
+        background-color: #6B7F82;
+        padding: 5px;
+        text-align: center;
+        color:antiquewhite;
+    }
+    .boxes span {
+      color: lightblue;
+      text-decoration: underline;
+    }
+    .t1 {
+        top: 60%;
+        left: 40px;
+    }
+    .t2 {
+        top: 40%;
+        left: 180px;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="background"></div>
+      <div class="boxes t1"><p>text inside box alot more text inside this box <span>1917</span></p></div>
+      <div class="boxes t2"><p>text inside box t2 <span>1918</span></p></div>
+      <div class="timeline"></div>
+    </main>
+  </body>
+</html>
