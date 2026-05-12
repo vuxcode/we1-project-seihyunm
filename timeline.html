@@ -22,12 +22,14 @@
     .background {
       width: 3000px;
     }
+    /* Controls the size and position of the timeline */
     .timeline 
     {
       border-bottom: 4px solid black;
       position: absolute;
       top: 50%;
     }
+    /* Controls the size and look of the information boxes */
     .boxes {
       border: 2px groove black;
       width: 200px;
@@ -37,10 +39,12 @@
       text-align: center;
       color:antiquewhite;
     }
+    /* Highlights the year of the event */
     .boxes span {
       color: lightblue;
       text-decoration: underline;
     }
+    /* Controls the look of the lines connecting the boxes to the timeline */
     .line {
       background: lightblue;
       position: absolute;
@@ -284,78 +288,85 @@
     </style>
   </head>
   <body>
-    <main>
-      <div class="background"></div>
-      <div class="date d1"></div>
-      <div class="date d2"></div>
-      <div class="date d3"></div>
-      <div class="date d4"></div>
-      <div class="date d5"></div>
-      <div class="date d6"></div>
-      <div class="date d7"></div>
-      <div class="date d8"></div>
-      <div class="date d9"></div>
-      <div class="date d10"></div>
-      <div class="date d11"></div>
-      <div class="date d12"></div>
-      <div class="date d13"></div>
-      <div class="date d14"></div>
-      <div class="date d15"></div>
-      <div class="date d16"></div>
-      <div class="date d17"></div>
-      <div class="date d18"></div>
-      <div class="date d19"></div>
-      <div class="date d20"></div>
-      <div class="date d21"></div>
-      <div class="date d22"></div>
-      <div class="date d23"></div>
-      <div class="date d24"></div>
-      <div class="date d25"></div>
-      <div class="date d26"></div>
-      <div class="date d27"></div>
-      <div class="date d28"></div>
-      <div class="date d29"></div>
-      <div class="date d30"></div>
-      <div class="date d31"></div>
-      <div class="date d32"></div>
-      <div class="date d33"></div>
-      <div class="date d34"></div>
-      <div class="date d35"></div>
-      <div class="date d36"></div>
-      <div class="date d37"></div>
-      <div class="date d38"></div>
-      <div class="date d39"></div>
-      <div class="date d40"></div>
-      <div class="date d41"></div>
-      <div class="date d42"></div>
-      <div class="date d43"></div>
-      <div class="date d44"></div>
-      <div class="date d45"></div>
-      <div class="date d46"></div>
-      <div class="date d47"></div>
-      <div class="date d48"></div>
-      <div class="date d49"></div>
-      <div class="date d50"></div>
-      <div class="date d51"></div>
-      <div class="date d52"></div>
-      <div class="date d53"></div>
-      <div class="date d54"></div>
-      <div class="date d55"></div>
-      <div class="date d56"></div>
-      <div class="date d57"></div>
-      <div class="date d58"></div>
-      <div class="date d59"></div>
-      <div class="line l1"></div>
-      <div class="line l2"></div>
-      <div class="boxes t1"><p>Gregorain Chant Develops In Christian Church <span>600 </span></p></div>
-      <div class="boxes t2"><p>Printing Press, Music Can Be Mass Produced <span>1450</span></p></div>
-      <div class="boxes t3"><p>First Major Opera, L'Orfeo By Claudio Monteverdi <span>1607</span></p></div>
-      <div class="boxes t4"><p>Johann Sebasitan Bach Publishes Brandenburg Concertos <span>1721</span></p></div>
-      <div class="boxes t5"><p>Wolfgang Amadeus Mozart Composes The Marrige Of Figaro <span>1786</span></p></div>
-      <div class="boxes t6"><p>Ludvig Van Beethoven Premieres Symphony No. 3 <span>1804</span></p></div>
-      <div class="boxes t7"><p>Frederic Chopin Gains Fame In Paris <span>1831</span></p></div>
-      <div class="boxes t8"><p>Jazz Begins Developing in New Orleans <span>1900</span></p></div>
-      <div class="timeline"></div>
-    </main>
+    <nav>
+      <ul id="menu"></ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+        <main>
+          <div class="background"></div>
+          <div class="date d1"></div>
+          <div class="date d2"></div>
+          <div class="date d3"></div>
+          <div class="date d4"></div>
+          <div class="date d5"></div>
+          <div class="date d6"></div>
+          <div class="date d7"></div>
+          <div class="date d8"></div>
+          <div class="date d9"></div>
+          <div class="date d10"></div>
+          <div class="date d11"></div>
+          <div class="date d12"></div>
+          <div class="date d13"></div>
+          <div class="date d14"></div>
+          <div class="date d15"></div>
+          <div class="date d16"></div>
+          <div class="date d17"></div>
+          <div class="date d18"></div>
+          <div class="date d19"></div>
+          <div class="date d20"></div>
+          <div class="date d21"></div>
+          <div class="date d22"></div>
+          <div class="date d23"></div>
+          <div class="date d24"></div>
+          <div class="date d25"></div>
+          <div class="date d26"></div>
+          <div class="date d27"></div>
+          <div class="date d28"></div>
+          <div class="date d29"></div>
+          <div class="date d30"></div>
+          <div class="date d31"></div>
+          <div class="date d32"></div>
+          <div class="date d33"></div>
+          <div class="date d34"></div>
+          <div class="date d35"></div>
+          <div class="date d36"></div>
+          <div class="date d37"></div>
+          <div class="date d38"></div>
+          <div class="date d39"></div>
+          <div class="date d40"></div>
+          <div class="date d41"></div>
+          <div class="date d42"></div>
+          <div class="date d43"></div>
+          <div class="date d44"></div>
+          <div class="date d45"></div>
+          <div class="date d46"></div>
+          <div class="date d47"></div>
+          <div class="date d48"></div>
+          <div class="date d49"></div>
+          <div class="date d50"></div>
+          <div class="date d51"></div>
+          <div class="date d52"></div>
+          <div class="date d53"></div>
+          <div class="date d54"></div>
+          <div class="date d55"></div>
+          <div class="date d56"></div>
+          <div class="date d57"></div>
+          <div class="date d58"></div>
+          <div class="date d59"></div>
+          <div class="line l1"></div>
+          <div class="line l2"></div>
+          <div class="boxes t1"><p>Gregorain Chant Develops In Christian Church <span>600 </span></p></div>
+          <div class="boxes t2"><p>Printing Press, Music Can Be Mass Produced <span>1450</span></p></div>
+          <div class="boxes t3"><p>First Major Opera, L'Orfeo By Claudio Monteverdi <span>1607</span></p></div>
+          <div class="boxes t4"><p>Johann Sebasitan Bach Publishes Brandenburg Concertos <span>1721</span></p></div>
+          <div class="boxes t5"><p>Wolfgang Amadeus Mozart Composes The Marrige Of Figaro <span>1786</span></p></div>
+          <div class="boxes t6"><p>Ludvig Van Beethoven Premieres Symphony No. 3 <span>1804</span></p></div>
+          <div class="boxes t7"><p>Frederic Chopin Gains Fame In Paris <span>1831</span></p></div>
+          <div class="boxes t8"><p>Jazz Begins Developing in New Orleans <span>1900</span></p></div>
+          <div class="timeline"></div>
+        </main>
   </body>
 </html>
