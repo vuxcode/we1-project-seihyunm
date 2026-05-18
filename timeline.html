@@ -6,30 +6,88 @@
     @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     * {
       box-sizing: border-box; 
-      margin: 0%;
-      padding: 0px;
+      margin: 0;
+      padding: 0;
     }
     body {
       font-family: "Elms Sans", sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
     }
     .background {
       background-color: darkslategray;
       width: 3000px;
-      height: 100vh;
+      height: 100%;
     }
-    /* Controls the lenght of the timline */
+    /* The menu bar at the top */
+    nav {
+      width: 100%;
+      position: fixed;   /* Keeps it at top while scrolling */
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    #menu {
+      display: flex; /* Puts items in a row */
+      justify-content: center; /* Centers them horizontally */
+      list-style: none; /* Removes bullet points */
+      gap: 40px; /* Space between Home,About,Contact */
+      padding: 20px 0;
+    }
+    #menu a {
+      text-decoration: none;
+      color: antiquewhite;
+      font-size: 1.2rem;
+    }
+      .scroll-wrapper {
+    overflow-x: auto; /* Enables horizontal scrolling just inside this element */
+    /* Uses the current size of the screen (the viewport width "vw") */
+    margin: 0vw;
+    width: 100vw;
+    }
+    #timeline-container {
+      background: #f0f0f0;
+      border: 5px solid gray;
+      height: 98vh;
+      /* Overflow hidden stops the scrollbar from extending when the cursor is on the right edge */
+      overflow: hidden; 
+      position: relative;
+      width: 3000px; /* Large container to mimic the timeline, can be changed and the program won't break */
+    }
+    #date-marker {
+      background: black;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 2px;
+    }
+    #current-date {
+      background: black;
+      border: black;
+      color: antiquewhite;
+      display: inline-block;
+      padding: 4px;
+      position: absolute;
+      top: 0;
+      pointer-events: none;
+    }
+    /* The lenght of the timline */
     .timeline, 
     .background {
-      width: 3000px;
+      width: 3000px; 
     }
-    /* Controls the size and position of the timeline */
+    /* The timeline */
     .timeline 
     {
       border-bottom: 4px solid black;
       position: absolute;
       top: 50%;
     }
-    /* Controls the size and look of the information boxes */
+    /* The information boxes */
     .boxes {
       border: 2px groove black;
       width: 200px;
@@ -39,12 +97,12 @@
       text-align: center;
       color:antiquewhite;
     }
-    /* Highlights the year of the event */
+    /* The years inside the boxes */
     .boxes span {
       color: lightblue;
       text-decoration: underline;
     }
-    /* Controls the look of the lines connecting the boxes to the timeline */
+    /* The lines connecting the boxes to the timeline */
     .line {
       background: lightblue;
       position: absolute;
@@ -285,88 +343,140 @@
     .d59 {
       left: 2950px;
     }
+
     </style>
   </head>
   <body>
     <nav>
-      <ul id="menu"></ul>
+      <ul id="menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
         <main>
-          <div class="background"></div>
-          <div class="date d1"></div>
-          <div class="date d2"></div>
-          <div class="date d3"></div>
-          <div class="date d4"></div>
-          <div class="date d5"></div>
-          <div class="date d6"></div>
-          <div class="date d7"></div>
-          <div class="date d8"></div>
-          <div class="date d9"></div>
-          <div class="date d10"></div>
-          <div class="date d11"></div>
-          <div class="date d12"></div>
-          <div class="date d13"></div>
-          <div class="date d14"></div>
-          <div class="date d15"></div>
-          <div class="date d16"></div>
-          <div class="date d17"></div>
-          <div class="date d18"></div>
-          <div class="date d19"></div>
-          <div class="date d20"></div>
-          <div class="date d21"></div>
-          <div class="date d22"></div>
-          <div class="date d23"></div>
-          <div class="date d24"></div>
-          <div class="date d25"></div>
-          <div class="date d26"></div>
-          <div class="date d27"></div>
-          <div class="date d28"></div>
-          <div class="date d29"></div>
-          <div class="date d30"></div>
-          <div class="date d31"></div>
-          <div class="date d32"></div>
-          <div class="date d33"></div>
-          <div class="date d34"></div>
-          <div class="date d35"></div>
-          <div class="date d36"></div>
-          <div class="date d37"></div>
-          <div class="date d38"></div>
-          <div class="date d39"></div>
-          <div class="date d40"></div>
-          <div class="date d41"></div>
-          <div class="date d42"></div>
-          <div class="date d43"></div>
-          <div class="date d44"></div>
-          <div class="date d45"></div>
-          <div class="date d46"></div>
-          <div class="date d47"></div>
-          <div class="date d48"></div>
-          <div class="date d49"></div>
-          <div class="date d50"></div>
-          <div class="date d51"></div>
-          <div class="date d52"></div>
-          <div class="date d53"></div>
-          <div class="date d54"></div>
-          <div class="date d55"></div>
-          <div class="date d56"></div>
-          <div class="date d57"></div>
-          <div class="date d58"></div>
-          <div class="date d59"></div>
-          <div class="line l1"></div>
-          <div class="line l2"></div>
-          <div class="boxes t1"><p>Gregorain Chant Develops In Christian Church <span>600 </span></p></div>
-          <div class="boxes t2"><p>Printing Press, Music Can Be Mass Produced <span>1450</span></p></div>
-          <div class="boxes t3"><p>First Major Opera, L'Orfeo By Claudio Monteverdi <span>1607</span></p></div>
-          <div class="boxes t4"><p>Johann Sebasitan Bach Publishes Brandenburg Concertos <span>1721</span></p></div>
-          <div class="boxes t5"><p>Wolfgang Amadeus Mozart Composes The Marrige Of Figaro <span>1786</span></p></div>
-          <div class="boxes t6"><p>Ludvig Van Beethoven Premieres Symphony No. 3 <span>1804</span></p></div>
-          <div class="boxes t7"><p>Frederic Chopin Gains Fame In Paris <span>1831</span></p></div>
-          <div class="boxes t8"><p>Jazz Begins Developing in New Orleans <span>1900</span></p></div>
-          <div class="timeline"></div>
+          <div class="scroll-wrapper">
+
+            <div id="timeline-container">
+
+                <div class="background"></div>
+                <div class="date d1"></div>
+                <div class="date d2"></div>
+                <div class="date d3"></div>
+                <div class="date d4"></div>
+                <div class="date d5"></div>
+                <div class="date d6"></div>
+                <div class="date d7"></div>
+                <div class="date d8"></div>
+                <div class="date d9"></div>
+                <div class="date d10"></div>
+                <div class="date d11"></div>
+                <div class="date d12"></div>
+                <div class="date d13"></div>
+                <div class="date d14"></div>
+                <div class="date d15"></div>
+                <div class="date d16"></div>
+                <div class="date d17"></div>
+                <div class="date d18"></div>
+                <div class="date d19"></div>
+                <div class="date d20"></div>
+                <div class="date d21"></div>
+                <div class="date d22"></div>
+                <div class="date d23"></div>
+                <div class="date d24"></div>
+                <div class="date d25"></div>
+                <div class="date d26"></div>
+                <div class="date d27"></div>
+                <div class="date d28"></div>
+                <div class="date d29"></div>
+                <div class="date d30"></div>
+                <div class="date d31"></div>
+                <div class="date d32"></div>
+                <div class="date d33"></div>
+                <div class="date d34"></div>
+                <div class="date d35"></div>
+                <div class="date d36"></div>
+                <div class="date d37"></div>
+                <div class="date d38"></div>
+                <div class="date d39"></div>
+                <div class="date d40"></div>
+                <div class="date d41"></div>
+                <div class="date d42"></div>
+                <div class="date d43"></div>
+                <div class="date d44"></div>
+                <div class="date d45"></div>
+                <div class="date d46"></div>
+                <div class="date d47"></div>
+                <div class="date d48"></div>
+                <div class="date d49"></div>
+                <div class="date d50"></div>
+                <div class="date d51"></div>
+                <div class="date d52"></div>
+                <div class="date d53"></div>
+                <div class="date d54"></div>
+                <div class="date d55"></div>
+                <div class="date d56"></div>
+                <div class="date d57"></div>
+                <div class="date d58"></div>
+                <div class="date d59"></div>
+
+                <div class="line l1"></div>
+                <div class="line l2"></div>
+
+                <div class="boxes t1"><p>Gregorain Chant Develops In Christian Church <span>600 </span></p></div>
+                <div class="boxes t2"><p>Printing Press, Music Can Be Mass Produced <span>1450</span></p></div>
+                <div class="boxes t3"><p>First Major Opera, L'Orfeo By Claudio Monteverdi <span>1607</span></p></div>
+                <div class="boxes t4"><p>Johann Sebasitan Bach Publishes Brandenburg Concertos <span>1721</span></p></div>
+                <div class="boxes t5"><p>Wolfgang Amadeus Mozart Composes The Marrige Of Figaro <span>1786</span></p></div>
+                <div class="boxes t6"><p>Ludvig Van Beethoven Premieres Symphony No. 3 <span>1804</span></p></div>
+                <div class="boxes t7"><p>Frederic Chopin Gains Fame In Paris <span>1831</span></p></div>
+                <div class="boxes t8"><p>Jazz Begins Developing in New Orleans <span>1900</span></p></div>
+
+              <div class="timeline"></div>
+
+              <div id="date-marker">
+                <span id="current-date"></span>
+              </div>
+
+            </div>
+          </div>
         </main>
+  <script>
+    // Find the container element
+    var container = document.getElementById("timeline-container");
+    // Find the marker element
+    var marker = document.getElementById("date-marker");
+    // Find the current date element
+    var current = document.getElementById("current-date");
+    // Add an event listener for when the mouse moves
+    container.addEventListener('mousemove', moveElement);
+    function moveElement(event) {
+      // Get the box position of the container element
+      var rect = container.getBoundingClientRect();
+      // Calculate the position of the cursor inside the container
+      // e.clientX is the mouse position in the web browser window
+      // rect.left is the container's distance from the left edge of the screen
+      var positionX = event.clientX - rect.left;
+
+      // The position of the marker should be moved using the calculated position. This sets the CSS which works if the position of the marker is set to absolute
+      marker.style.left = positionX + "px";
+      // Use the current position and the width of the container to calculate dates
+      calculateDate(positionX, rect.width);
+    }
+    // Separate function for calculating the date
+    function calculateDate(currentX, totalWidth) {
+      // Get the current percentage
+      var percentage = (currentX / totalWidth);
+      // SETTINGS
+      // Start year
+      var start = 500;
+      // End year
+      var endyear = 2026;
+      // Use the entire width of the container to calculate the year
+      var year = Math.floor(start + (percentage * (endyear - start)));
+      // Update the text in the current year span element
+      current.innerText = year;
+    }
+    </script> <!-- End of the script element -->
   </body>
 </html>
