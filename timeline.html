@@ -41,7 +41,8 @@
       color: antiquewhite;
       font-size: 1.2rem;
     }
-      .scroll-wrapper {
+
+    .scroll-wrapper {
     overflow-x: auto; /* Enables horizontal scrolling just inside this element */
     /* Uses the current size of the screen (the viewport width "vw") */
     margin: 0vw;
@@ -115,6 +116,18 @@
       position: absolute;
       top: 50%;
       margin-top: -10px
+    }
+    a:hover p {
+      color: white;
+    }
+    #menu a:hover  {
+      color: white;
+    }
+    a:hover div {
+      background-color: #738b8f;
+    }
+    a:hover span {
+      color: rgb(213, 245, 255);
     }
     .t1 {
       top: 60%;
@@ -422,8 +435,9 @@
 
                 <div class="line l1"></div>
                 <div class="line l2"></div>
-
-                <div class="boxes t1"><p>Gregorain Chant Develops In Christian Church <span>600 </span></p></div>
+              
+              <ul id="links">
+                <li><a target="_blank" href="https://en.wikipedia.org/wiki/Gregorian_chant"><div class="boxes t1"><p>Gregorain Chant Develops In Christian Church <span>600 </span></p></div></a></li>
                 <div class="boxes t2"><p>Printing Press, Music Can Be Mass Produced <span>1450</span></p></div>
                 <div class="boxes t3"><p>First Major Opera, L'Orfeo By Claudio Monteverdi <span>1607</span></p></div>
                 <div class="boxes t4"><p>Johann Sebasitan Bach Publishes Brandenburg Concertos <span>1721</span></p></div>
@@ -431,7 +445,7 @@
                 <div class="boxes t6"><p>Ludvig Van Beethoven Premieres Symphony No. 3 <span>1804</span></p></div>
                 <div class="boxes t7"><p>Frederic Chopin Gains Fame In Paris <span>1831</span></p></div>
                 <div class="boxes t8"><p>Jazz Begins Developing in New Orleans <span>1900</span></p></div>
-
+              </ul>
               <div class="timeline"></div>
 
               <div id="date-marker">
