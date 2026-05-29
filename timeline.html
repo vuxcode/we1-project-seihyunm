@@ -34,15 +34,17 @@
       justify-content: center; /* Centers them horizontally */
       list-style: none; /* Removes bullet points */
       gap: 40px; /* Space between Home,About,Contact */
-      padding: 20px 0;
+      padding: 34px 0;
     }
     #menu a {
       text-decoration: none;
       color: antiquewhite;
       font-size: 1.2rem;
+      display:inline-block;
+      border: 2px groove black;
+      padding: 6px 4px;
     }
-
-    .scroll-wrapper {
+    #scroll-wrapper {
     overflow-x: auto; /* Enables horizontal scrolling just inside this element */
     /* Uses the current size of the screen (the viewport width "vw") */
     margin: 0vw;
@@ -65,6 +67,7 @@
       left: 0;
       pointer-events: none;
       width: 2px;
+      z-index: 1;
     }
     #current-date {
       background: black;
@@ -97,6 +100,7 @@
       padding: 4x;
       text-align: center;
       color:antiquewhite;
+      z-index: 2;
     }
     /* The years inside the boxes */
     .boxes span {
@@ -122,6 +126,7 @@
     }
     #menu a:hover  {
       color: white;
+      background-color: darkslategray;
     }
     a:hover div {
       background-color: #738b8f;
@@ -356,19 +361,21 @@
     .d59 {
       left: 2950px;
     }
-
+    .section {
+      min-height: 100vh;
+    }
     </style>
   </head>
   <body>
     <nav>
       <ul id="menu">
-        <li><a href="#home">Home</a></li>
+        <li><a href="#scroll-wrapper">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
         <main>
-          <div class="scroll-wrapper">
+          <div id="scroll-wrapper">
 
             <div id="timeline-container">
 
@@ -454,43 +461,71 @@
 
             </div>
           </div>
+          <div id="about" class="section">
+            About
+          </div>
+          <div id="contact" class="section">
+            Contact
+          </div>
         </main>
-  <script>
-    // Find the container element
-    var container = document.getElementById("timeline-container");
-    // Find the marker element
-    var marker = document.getElementById("date-marker");
-    // Find the current date element
-    var current = document.getElementById("current-date");
-    // Add an event listener for when the mouse moves
-    container.addEventListener('mousemove', moveElement);
-    function moveElement(event) {
-      // Get the box position of the container element
-      var rect = container.getBoundingClientRect();
-      // Calculate the position of the cursor inside the container
-      // e.clientX is the mouse position in the web browser window
-      // rect.left is the container's distance from the left edge of the screen
-      var positionX = event.clientX - rect.left;
-
-      // The position of the marker should be moved using the calculated position. This sets the CSS which works if the position of the marker is set to absolute
-      marker.style.left = positionX + "px";
-      // Use the current position and the width of the container to calculate dates
-      calculateDate(positionX, rect.width);
-    }
-    // Separate function for calculating the date
-    function calculateDate(currentX, totalWidth) {
-      // Get the current percentage
-      var percentage = (currentX / totalWidth);
-      // SETTINGS
-      // Start year
-      var start = 500;
-      // End year
-      var endyear = 2026;
-      // Use the entire width of the container to calculate the year
-      var year = Math.floor(start + (percentage * (endyear - start)));
-      // Update the text in the current year span element
-      current.innerText = year;
-    }
-    </script> <!-- End of the script element -->
+        <script>
+          // Find the scroll wrapper element
+          var scrollwrapper = document.getElementById("scroll-wrapper");
+          // Find the container element
+          var container = document.getElementById("timeline-container");
+          // Find the marker element
+          var marker = document.getElementById("date-marker");
+          // Find the current date element
+          var current = document.getElementById("current-date");
+          
+          // Add an event listener for when the mouse moves
+          window.addEventListener('mousemove', moveElement);
+          
+          // Add an event listener for using the scrollwheel to navigate the timeline
+          scrollwrapper.addEventListener("wheel", horizontalScroll);
+          
+          // Create a function to move an element horizontally on the screen
+          function moveElement(event) {
+            // Get the box position of the container element
+            var rect = container.getBoundingClientRect();
+            // Calculate the position of the cursor inside the container
+            // e.clientX is the mouse position in the web browser window
+            // rect.left is the container's distance from the left edge of the screen
+            var positionX = event.clientX - rect.left;
+          
+            // The position of the marker should be moved using the calculated position. This sets the CSS which works if the position of the marker is set to absolute
+            marker.style.left = positionX + "px";
+            // Use the current position and the width of the container to calculate dates
+            calculateDate(positionX, rect.width);
+          }
+          
+          // Separate function for calculating the date
+          function calculateDate(currentX, totalWidth) {
+            // Get the current percentage
+            var percentage = (currentX / totalWidth);
+            // SETTINGS
+            // Start year
+            var start = 500;
+            // End year
+            var endyear = 2026;
+            // Use the entire width of the container to calculate the year
+            var year = Math.floor(start + (percentage * (endyear - start)));
+            // Update the text in the current year span element
+            current.innerText = year;
+          }
+          
+          function horizontalScroll(event) {
+            console.log("WORKING!");
+            // Let two finger scrolling work naturally
+            if (event.deltaX !== 0) {
+              // Exit if scrolling horizontally
+              return;
+            }
+            // Prevent the default vertical scroll behavior
+            event.preventDefault();
+            // Add the vertical scroll delta to the horizontal scroll position
+            scrollwrapper.scrollLeft += event.deltaY;
+          };
+          </script> <!-- End of the script element -->
   </body>
 </html>
