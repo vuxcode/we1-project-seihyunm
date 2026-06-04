@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Major Project</title>
+    <title>MusicTimeline</title>
     <style> 
     @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     * {
       box-sizing: border-box; 
       margin: 0;
       padding: 0;
+    }
+    body, html {
+      scrollbar-gutter: stable;
     }
     body {
       font-family: "Elms Sans", sans-serif;
@@ -43,6 +46,8 @@
       display:inline-block;
       border: 2px groove black;
       padding: 6px 4px;
+      width: 100px;
+      text-align: center;
     }
     #scroll-wrapper {
     overflow-x: auto; /* Enables horizontal scrolling just inside this element */
@@ -52,12 +57,39 @@
     }
     #timeline-container {
       background: #f0f0f0;
-      border: 5px solid gray;
       height: 98vh;
       /* Overflow hidden stops the scrollbar from extending when the cursor is on the right edge */
       overflow: hidden; 
       position: relative;
       width: 3000px; /* Large container to mimic the timeline, can be changed and the program won't break */
+    }
+    #about {
+      background-color: darkslategray;
+      padding: 2px;
+    }
+    .about-box {
+      border: 2px groove black;
+      width: 600px;
+      height: 800px;
+      margin: auto;
+      margin-top: 150px;
+      padding: 4px;
+      background-color: #6B7F82;
+      color: antiquewhite;
+    }
+    #contact {
+      background-color: darkslategray;
+      padding: 2px;
+    }
+    .contact-box {
+      border: 2px groove black;
+      width: 600px;
+      height: 800px;
+      margin: auto;
+      margin-top: 150px;
+      padding: 4px;
+      background-color: #6B7F82;
+      color: antiquewhite;
     }
     #date-marker {
       background: black;
@@ -184,6 +216,7 @@
       height: 10%;
       left: 278px;
     }
+    /* #region Dates */
     .d1 {
       left: 50px;
     }
@@ -361,6 +394,7 @@
     .d59 {
       left: 2950px;
     }
+    /* #endregion */
     .section {
       min-height: 100vh;
     }
@@ -462,10 +496,10 @@
             </div>
           </div>
           <div id="about" class="section">
-            About
+            <div class="about-box"><p>This project...</p></div>
           </div>
           <div id="contact" class="section">
-            Contact
+            <div class="contact-box"><p>Contact me here...</p></div>
           </div>
         </main>
         <script>
