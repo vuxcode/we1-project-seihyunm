@@ -133,7 +133,7 @@
       width: 200px;
       position: absolute;
       background-color: #6B7F82;
-      padding: 4x;
+      padding: 2px;
       text-align: center;
       color:antiquewhite;
       z-index: 2;
@@ -738,7 +738,7 @@
           </div>
           <div id="about" class="section">
             <div class="about-box"><h1>THE HISTORY OF MUSIC</h1>
-              <img src="imagetop.png">
+              <img alt="image depicting historical musical figures from then to now" src="imagetop.png">
             <p>The History of Music Timeline is an interactive web development project designed to explore over 1,500 years of musical history, from 500 AD to 2026.
             <br><br>
             The website presents key moments, innovations, composers, genres, and cultural developments in music through a horizontally scrollable timeline that allows users to travel through different historical periods in an engaging and intuitive way.
@@ -769,7 +769,6 @@
                   </form>
             </div>
           </div>
-          </div>
         </main>
         <script>
           // Find the scroll wrapper element
@@ -780,43 +779,34 @@
           var marker = document.getElementById("date-marker");
           // Find the current date element
           var current = document.getElementById("current-date");
-          
           const START_YEAR = 500;
           const END_YEAR = 2100;
           const TIMELINE_WIDTH = 5000;
-
           function yearToX(year) {
             return (
               (year - START_YEAR) /
               (END_YEAR - START_YEAR)
             ) * TIMELINE_WIDTH;
           }
-
           const boxes = document.querySelectorAll(".boxes");
           const lines = document.querySelectorAll(".line");
           const dates = document.querySelectorAll(".date");
-
           boxes.forEach(box => {
             const year = Number(box.dataset.year);
             box.style.left = (yearToX(year) - 100) + "px";
           });
-
           lines.forEach(box => {
             const year = Number(box.dataset.year);
             box.style.left = yearToX(year) + "px";
           });
-
           dates.forEach(box => {
             const year = Number(box.dataset.year);
             box.style.left = yearToX(year) + "px";
           });
-
           // Add an event listener for when the mouse moves
           window.addEventListener('mousemove', moveElement);
-          
           // Add an event listener for using the scrollwheel to navigate the timeline
           scrollwrapper.addEventListener("wheel", horizontalScroll);
-          
           // Create a function to move an element horizontally on the screen
           function moveElement(event) {
             // Get the box position of the container element
@@ -825,13 +815,11 @@
             // e.clientX is the mouse position in the web browser window
             // rect.left is the container's distance from the left edge of the screen
             var positionX = event.clientX - rect.left;
-          
             // The position of the marker should be moved using the calculated position. This sets the CSS which works if the position of the marker is set to absolute
             marker.style.left = positionX + "px";
             // Use the current position and the width of the container to calculate dates
             calculateDate(positionX, rect.width);
           }
-          
           // Separate function for calculating the date
           function calculateDate(currentX, totalWidth) {
             // Get the current percentage
@@ -846,7 +834,6 @@
             // Update the text in the current year span element
             current.innerText = year;
           }
-          
           function horizontalScroll(event) {
             console.log("WORKING!");
             // Let two finger scrolling work naturally
